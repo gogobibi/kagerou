@@ -1,0 +1,42 @@
+/* 해루 오버레이 소울크리스탈 색상 - kagerou custom CSS */
+/* 설정 UI의 Custom CSS란에 붙여넣기하면 적용됩니다 */
+
+/* 탱커 */
+.class-gld .gauge, .class-gla .gauge, .class-pld .gauge { background: #a8d2e6; }
+.class-mrd .gauge, .class-war .gauge { background: #cf2621; }
+.class-drk .gauge { background: #d126cc; }
+.class-gnb .gauge { background: #998d50; }
+
+/* 근접 딜러 */
+.class-pgl .gauge, .class-mnk .gauge { background: #d69c00; }
+.class-lnc .gauge, .class-drg .gauge { background: #4164cd; }
+.class-rog .gauge, .class-nin .gauge { background: #af1964; }
+.class-sam .gauge { background: #e46d04; }
+.class-rpr .gauge { background: #965a90; }
+.class-vpr .gauge { background: #108210; }
+
+/* 원거리 물리 딜러 */
+.class-arc .gauge, .class-brd .gauge { background: #91ba5e; }
+.class-mch .gauge { background: #6ee1d6; }
+.class-dnc .gauge { background: #e2b0af; }
+
+/* 마법 딜러 */
+.class-thm .gauge, .class-blm .gauge { background: #a579d6; }
+.class-acn .gauge, .class-smn .gauge { background: #2d9b78; }
+.class-rdm .gauge { background: #e87b7b; }
+.class-blu .gauge { background: #2c2cff; }
+.class-pct .gauge { background: #fc92e1; }
+
+/* 힐러 */
+.class-cnj .gauge, .class-whm .gauge { background: #fff0dc; }
+.class-sch .gauge { background: #8657ff; }
+.class-ast .gauge { background: #ffe74a; }
+.class-sge .gauge { background: #80a0f0; }
+
+/* 펫 */
+.class-garuda .gauge, .class-titan .gauge, .class-ifrit .gauge { background: rgba(45, 155, 120, 0.5); }
+.class-eos .gauge, .class-selene .gauge { background: rgba(134, 87, 255, 0.5); }
+.class-rook .gauge, .class-bishop .gauge { background: rgba(110, 225, 214, 0.5); }
+
+/* 풀 바 */
+.gauge { height: 100%; }

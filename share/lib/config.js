@@ -13,24 +13,24 @@ const CONFIG_DEFAULT = {
     'body-font': "'Lato', 'Source Han Sans', 'Meiryo UI', '맑은 고딕', sans-serif",
     // header / ui
     'nav-opacity': 1,
-    'nav-bg': 'rgba(31, 31, 31, 0.9)',
-    'nav-fg': '#ddd',
-    'header-bg': 'rgba(0, 0, 0, 0.5)',
-    'dropdown-bg': 'rgba(31, 31, 31, 0.95)',
-    'dropdown-fg': '#ddd',
+    'nav-bg': 'rgba(25, 25, 35, 0.9)',
+    'nav-fg': '#d8d8e0',
+    'header-bg': 'rgba(10, 10, 20, 0.5)',
+    'dropdown-bg': 'rgba(25, 25, 35, 0.95)',
+    'dropdown-fg': '#d8d8e0',
     'content-bg': '', // URL
-    'content-bg-color': 'rgba(0, 0, 0, 0.5)',
+    'content-bg-color': 'rgba(5, 5, 15, 0.5)',
     'content-bg-opacity': 1,
     'content-bg-filter': '',
-    'content-fg': '#eee',
-    'cell-bg': 'rgba(255, 255, 255, 0.1)',
-    'my-row-fg': 'rgba(179, 229, 252, 1)',
+    'content-fg': '#e8e8f0',
+    'cell-bg': 'rgba(200, 200, 255, 0.07)',
+    'my-row-fg': 'rgba(170, 200, 255, 1)',
     'content-align': 'center',
-    'color-accent': '#26c6da',
-    'shadow-card': '0 0.05rem 0.25rem rgba(0, 0, 0, 0.5)',
-    'shadow-text': '0 0 0.125em rgba(0, 0, 0, 1)',
+    'color-accent': '#7b8ef8',
+    'shadow-card': '0 0.05rem 0.25rem rgba(0, 0, 10, 0.6)',
+    'shadow-text': '0 0 0.125em rgba(0, 0, 10, 1)',
     'font-size-small': '0.75rem',
-    'gauge-height': '10%',
+    'gauge-height': '100%',
     'graph-height': '1.5rem'
   },
   tabs: [
@@ -135,31 +135,31 @@ const CONFIG_DEFAULT = {
   color: {
     'gauge-default': '#444',
     'gauge-opacity': '1',
-    pld: 'rgb(21, 28, 100)', // Indigo 900 (B -10%)
-    war: 'rgb(153, 23, 23)', // Red 900 (B -10%)
-    drk: 'rgb(136, 14, 79)', // Pink 900
-    gnb: 'rgb(78, 52, 46)', // Brown 800
-    mnk: 'rgb(255, 152, 0)', // Orange 500
-    drg: 'rgb(63, 81, 181)', // Indigo 500
-    brd: 'rgb(158, 157, 36)', // Lime 800
-    nin: 'rgb(211, 47, 47)', // Red 700
-    rpr: 'rgb(254, 179, 0)', // Amber 600
-    vpr: 'rgb(216, 67, 21)', // Deep Orange 800
-    smn: 'rgb(46, 125, 50)', // Green 800
-    blm: 'rgb(126, 87, 194)', // Deep Purple 400
-    mch: 'rgb(0, 151, 167)', // Cyan 700
-    rdm: 'rgb(233, 30, 99)', // Pink 500
-    blu: 'rgb(0, 185, 247)', // Light Blue 500
-    pct: 'rgb(253, 216, 53)', // Yellow 600
-    dnc: 'rgb(244, 143, 177)', // Pink 200
-    sam: 'rgb(255, 202, 40)', // Amber 400
-    whm: 'rgb(117, 117, 117)', // Gray 600
-    sch: 'rgb(121, 134, 203)', // Indigo 300
-    ast: 'rgb(121, 85, 72)', // Brown 500
-    sge: 'rgb(79, 195, 247)', // Light Blue 300
-    'smn-pet': 'rgba(46, 125, 50, 0.5)',
-    'sch-pet': 'rgba(121, 134, 203, 0.5)',
-    'mch-pet': 'rgba(0, 151, 167, 0.5)',
+    pld: '#a8d2e6', // 나이트 Paladin
+    war: '#cf2621', // 전사 Warrior
+    drk: '#d126cc', // 암흑기사 Dark Knight
+    gnb: '#998d50', // 건브레이커 Gunbreaker
+    mnk: '#d69c00', // 몽크 Monk
+    drg: '#4164cd', // 용기사 Dragoon
+    brd: '#91ba5e', // 음유시인 Bard
+    nin: '#af1964', // 닌자 Ninja
+    rpr: '#965a90', // 리퍼 Reaper
+    vpr: '#108210', // 바이퍼 Viper
+    smn: '#2d9b78', // 소환사 Summoner
+    blm: '#a579d6', // 흑마도사 Black Mage
+    mch: '#6ee1d6', // 기공사 Machinist
+    rdm: '#e87b7b', // 적마도사 Red Mage
+    blu: '#2c2cff', // 청마도사 Blue Mage
+    pct: '#fc92e1', // 픽토맨서 Pictomancer
+    dnc: '#e2b0af', // 무도가 Dancer
+    sam: '#e46d04', // 사무라이 Samurai
+    whm: '#fff0dc', // 백마도사 White Mage
+    sch: '#8657ff', // 학자 Scholar
+    ast: '#ffe74a', // 점성술사 Astrologian
+    sge: '#80a0f0', // 현자 Sage
+    'smn-pet': 'rgba(45, 155, 120, 0.5)',
+    'sch-pet': 'rgba(134, 87, 255, 0.5)',
+    'mch-pet': 'rgba(110, 225, 214, 0.5)',
     'chocobo': '#444',
     'limit-break': '#444'
   },
@@ -211,9 +211,31 @@ const CONFIG_DEFAULT = {
 }
 
 const MIGRATE_MAP = {
-  'color.gnb': { if: _ => !_, action: 'default' },
-  'color.blu': { if: _ => !_, action: 'default' },
-  'color.dnc': { if: _ => !_, action: 'default' }
+  // Gauge height: full bar
+  'style.gauge-height': { if: _ => _ === '10%', action: 'default' },
+  // Soul Crystal theme migration - reset if falsy or matches old Material Design defaults
+  'color.pld': { if: _ => _ === 'rgb(21, 28, 100)', action: 'default' },
+  'color.war': { if: _ => _ === 'rgb(153, 23, 23)', action: 'default' },
+  'color.drk': { if: _ => _ === 'rgb(136, 14, 79)', action: 'default' },
+  'color.gnb': { if: _ => !_ || _ === 'rgb(78, 52, 46)', action: 'default' },
+  'color.mnk': { if: _ => _ === 'rgb(255, 152, 0)', action: 'default' },
+  'color.drg': { if: _ => _ === 'rgb(63, 81, 181)', action: 'default' },
+  'color.brd': { if: _ => _ === 'rgb(158, 157, 36)', action: 'default' },
+  'color.nin': { if: _ => _ === 'rgb(211, 47, 47)', action: 'default' },
+  'color.rpr': { if: _ => _ === 'rgb(254, 179, 0)', action: 'default' },
+  'color.vpr': { if: _ => _ === 'rgb(216, 67, 21)', action: 'default' },
+  'color.smn': { if: _ => _ === 'rgb(46, 125, 50)', action: 'default' },
+  'color.blm': { if: _ => _ === 'rgb(126, 87, 194)', action: 'default' },
+  'color.mch': { if: _ => _ === 'rgb(0, 151, 167)', action: 'default' },
+  'color.rdm': { if: _ => _ === 'rgb(233, 30, 99)', action: 'default' },
+  'color.blu': { if: _ => !_ || _ === 'rgb(0, 185, 247)', action: 'default' },
+  'color.pct': { if: _ => _ === 'rgb(253, 216, 53)', action: 'default' },
+  'color.dnc': { if: _ => !_ || _ === 'rgb(244, 143, 177)', action: 'default' },
+  'color.sam': { if: _ => _ === 'rgb(255, 202, 40)', action: 'default' },
+  'color.whm': { if: _ => _ === 'rgb(117, 117, 117)', action: 'default' },
+  'color.sch': { if: _ => _ === 'rgb(121, 134, 203)', action: 'default' },
+  'color.ast': { if: _ => _ === 'rgb(121, 85, 72)', action: 'default' },
+  'color.sge': { if: _ => _ === 'rgb(79, 195, 247)', action: 'default' }
 }
 
 const CONFIG_KEY_SHOULD_OVERRIDE = [
